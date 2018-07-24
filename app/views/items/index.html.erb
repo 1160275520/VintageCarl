@@ -1,0 +1,10 @@
+<div class="row">
+  <% @items.each_with_index do |item,index| %>
+    <div class="col-3" align="center">
+       <img class="item-img" src="<%= item.image %>" width="100%">
+       <div class="item-title"><a class="title" href="/items/<%= item.id %>"><%= item.title %></a></div>
+       <div class="item-price"> <%= item.price %></div>
+       <%= link_to 'Destroy', item, :method => :delete, class: 'btn btn-danger btn-sm' %>
+    </div>
+  <% end %>
+</div>

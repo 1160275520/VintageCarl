@@ -1,0 +1,9 @@
+<div class="row">
+  <% @requests.each_with_index do |request, index| %>
+    <div class="col-3" align="center">
+       <div class="title"><%= request.title %></div>
+       <div><%= request.desc %></div>
+       <%= link_to 'Destroy', request, :method => :delete, class: 'btn btn-danger btn-sm' %>
+    </div>
+  <% end %>
+</div>

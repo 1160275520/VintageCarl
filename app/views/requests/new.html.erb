@@ -1,0 +1,11 @@
+<div class="main-agileits">
+   <div class="form-w3-agile">
+      <h2>Sumbit a Request</h2>
+      <%= form_for @request do |f| %>
+            <input placeholder="Title" type="text" name="request[title]" id="request_title" value="<%= @request.title %>">
+            <input placeholder="Description" type="text" name="request[desc]" id="request_desc" value="<%= @request.desc %>">
+            <input type="submit" name="commit" value="Submit" class="btn btn-primary" data-disable-with="Submit">
+        </div>
+      <% end %>
+   </div>
+</div>

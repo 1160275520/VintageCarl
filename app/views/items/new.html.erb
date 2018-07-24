@@ -1,0 +1,14 @@
+<div class="main-agileits">
+   <div class="form-w3-agile">
+      <h2>Sold Your Stuff</h2>
+      <%= form_for @item do |f| %>
+            <input placeholder="Title" type="text" name="item[title]" id="item_title" value="<%= @item.title %>">
+            <input placeholder="Description" type="text" name="item[desc]" id="item_desc" value="<%= @item.desc %>">
+            <input placeholder="Price" type="text" name="item[price]" id="item_price" value="<%= @item.price %>">
+            <h10> Upload a image </h10>
+            <%= f.file_field :image %>
+            <input type="submit" name="commit" value="Submit" class="btn btn-primary" data-disable-with="Submit">
+        </div>
+      <% end %>
+   </div>
+</div>
