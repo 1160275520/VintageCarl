@@ -58,13 +58,15 @@
         });
         $('.loginbutton').click(function(){
             FB.login(function(response) {
-               console.log(response)
+              $(".login").hide();
+              $(".logout").show();
             }, {scope: 'email,user_likes'});
         });
         $('.logoutbutton').click(function(){
             FB.logout(function(response) 
             {
-               console.log(response)
+              $(".logout").hide();
+              $(".login").show();
             });
         });      
       };

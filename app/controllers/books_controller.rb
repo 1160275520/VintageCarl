@@ -45,6 +45,18 @@ class BooksController < ApplicationController
     redirect_to @book
   end
 
+  def search
+    if params[:search]
+      #sql query
+      @books = Book.where("title LIKE ? OR author LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%")
+      # optional elastic search
+      # @books = Book.search(params[:search], misspellings: {edit_distance: 3} )
+    else
+      @books = Book.all
+    end
+    @background_pic = "black"
+  end
+
   private
   def find_book
     @book = Book.find(params[:id])

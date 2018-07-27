@@ -1,0 +1,11 @@
+<div class="row search-items">
+  <% @items.each_with_index do |item,index| %>
+  <div class="col-2 item" align="center">
+        <div class="item-title"><a href="/items/<%= item.id %>"><%= item.title %></a></div>
+        <div class="item-desc"> <%= item.desc %></div>
+  </div>
+  <div class="col-2 img-item" align="center">
+    <img data-title="<%= item.title %>"  data-author="<%= item.author %>" class="item-img" id="<%= index %>" src="" alt="item" width="60%">
+  </div>
+<% end %>
+

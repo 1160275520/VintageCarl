@@ -18,24 +18,29 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           My Dashboard
-        </a>
-        <% if @logged_in %>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        </a>       
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item logout" href="/user/stufftosell">My Stuffs to sell</a>
             <a class="dropdown-item logout" href="/user/requests">My Requests</a>
             <div class="dropdown-divider logout"></div>
-            <a class="dropdown-item logout logoutbutton" href="/user/login">Log Out</a> 
-          </div>
-        <% else %>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item login" href="/user/login">Log In</a>
-        </div>
-        <% end %>
+            <a class="dropdown-item logout logoutbutton" href="/user/login">Log Out</a>         
+            <a class="dropdown-item login" href="/user/login">Log In</a>
+        </div>      
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <%= form_tag(search_books_path, method: :get, :class => 'form-inline my-2 my-lg-0') do%>
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">    
       <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <% end %>
   </div>
 </nav>
+
+<script type="text/javascript">
+  <% if @logged_in %>
+    $('.login').hide();
+    $('.logout').show();
+  <% else %>
+    $('.logout').hide();
+    $('.login').show();
+  <% end %>
+</script>

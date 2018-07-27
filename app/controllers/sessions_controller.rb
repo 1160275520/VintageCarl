@@ -8,5 +8,6 @@ class SessionsController < ApplicationController
 
    def destroy
       reset_session
+      render json: {staus: "loggedout"}, status: "ok"
    end
 end

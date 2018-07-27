@@ -45,6 +45,18 @@ class ItemsController < ApplicationController
     redirect_to @item
   end
 
+  def search
+    if params[:search]
+      #sql query
+      @items = Item.where("title LIKE ? OR desc LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%")
+      # optional elastic search
+      # @books = Book.search(params[:search], misspellings: {edit_distance: 3} )
+    else
+      @items = Item.all
+    end
+  end
+
+
   private
 
   def find_item
