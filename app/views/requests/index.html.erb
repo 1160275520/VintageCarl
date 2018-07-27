@@ -5,8 +5,9 @@
 <div class="row">
   <% @requests.each_with_index do |request, index| %>
     <div class="col-3" align="center">
-       <div class="title"><%= request.title %></div>
+       <div class="item-title"><a class="title" href="/requests/<%= request.id %>"><%= request.title %></a></div>
        <div><%= request.desc %></div>
     </div>
   <% end %>
 </div>
+

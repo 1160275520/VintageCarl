@@ -69,7 +69,8 @@ class BooksController < ApplicationController
   def upload(key, path)
     obj = Bucket.object(key)
     obj.upload_file(path)
-    obj.presigned_url(:get)
+
+    obj.public_url
   end
 
   def delete(key)

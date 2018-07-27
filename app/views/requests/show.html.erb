@@ -1,0 +1,17 @@
+<div class="row request" >
+   <div class="col-6 info">
+      <h2 class="title"><%= @request.title %></h2>
+      <h5 class="author"><%= @request.desc %></h5>
+      <button class="contactme btn btn-outline-light my-2 my-sm-0">Contact Buyer</button>
+   </div>
+</div>
+
+<script type="text/javascript">
+$('.contactme').click(function(){
+    <% request = @request %>
+    <% userID = request.userID %>
+    <% user = User.find_by(id: userID) %>
+    <% url = user.url %>
+    window.location.replace("<%= url %>");
+   })  
+</script>

@@ -28,11 +28,11 @@
       </li>
     </ul>
     <div class="btn-group btn-group-toggle option" data-toggle="buttons">
-      <label class="btn active btn-warning">
-        <input type="radio" name="options" id="option1" autocomplete="off" checked> Books
+      <label class="btn btn-warning active" id="option1">
+        <input type="radio" name="options" autocomplete="off" checked> Books
       </label>
-      <label class="btn btn-warning">
-        <input type="radio" name="options" id="option2" autocomplete="off"> Other Treasures
+      <label class="btn btn-warning" id="option2" >
+        <input type="radio" name="options" autocomplete="off"> Other Treasures
       </label>
     </div>
     <form class="form-inline my-2 my-lg-0" id="search-form" action="/books/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
@@ -49,19 +49,22 @@
 </nav>
 
 <script type="text/javascript">
-  <% if @logged_in %>
-    $('.login').hide();
-    $('.logout').show();
-  <% else %>
-    $('.logout').hide();
-    $('.login').show();
-  <% end %>
-  
-  $('#option2').click(function(){
-    $("#search-form").attr("action", "/items/search/");
-  })
+  $(document).ready(function()
+  {
+    <% if @logged_in %>
+      $('.login').hide();
+      $('.logout').show();
+    <% else %>
+      $('.logout').hide();
+      $('.login').show();
+    <% end %>
 
-  $('#option1').click(function(){
-    $("#search-form").attr("action", "/books/search/");
-  })
+    $('#option2').click(function(){
+      $("#search-form").attr("action", "/items/search/");
+    });
+
+    $('#option1').click(function(){
+      $("#search-form").attr("action", "/books/search/");
+    });
+  });
 </script>

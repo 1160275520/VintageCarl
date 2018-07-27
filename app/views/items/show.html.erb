@@ -1,10 +1,22 @@
-<div class="row book" >
+<div class="row item" >
    <div class="col-6 info">
       <h2 class="title"><%= @item.title %></h2>
       <h5 class="author"><%= @item.desc %></h5>
       <h5><%= @item.price %></h5>
+      <button class="contactme btn btn-outline-light my-2 my-sm-0">Contact Seller</button>
    </div>
    <div class="col-6" >
       <img src="<%= @url %>" style="width:80%;">
    </div>
 </div>
+
+<script type="text/javascript">
+$('.contactme').click(function(){
+    <% item = @item %>
+    <% userID = item.userID %>
+    <% user = User.find_by(id: userID) %>
+    <% url = user.url %>
+    window.location.replace("<%= url %>");
+   })  
+</script>
+

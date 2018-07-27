@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  before_action :find_request, only: [:show, :update, :edit, :destroy]
+  before_action :find_request, only: [:show, :update, :edit, :destroy, :show]
 
   def index
     @requests = Request.all
@@ -9,6 +9,10 @@ class RequestsController < ApplicationController
   def new
     @request = Request.new
     @background_pic = "homepic"
+  end
+
+  def show
+    @background_pic = "black"
   end
 
   def create
