@@ -1,11 +1,14 @@
-<div class="row">
+<h3 class="white">All Books</h3>
+<div class="sellbutton">
+   <a href="/books/new"><button class="btn btn-outline-light my-2 my-sm-0">Sell My Book</button></a>
+</div>
+<div class="row index">
   <% @books.each_with_index do |book,index| %>
-    <div class="col-3" align="center">
+    <div class="col-4" align="center">
        <img class="book-img" src="<%= book.image %>" width="100%">
        <div class="book-title"><a class="title" href="/books/<%= book.id %>"><%= book.title %></a></div>
        <div class="book-author"> <%= book.author %></div>
        <div class="book-price"> <%= book.price %></div>
-       <%= link_to 'Destroy', book, :method => :delete, class: 'btn btn-danger btn-sm' %>
     </div>
   <% end %>
 </div>

@@ -4,8 +4,20 @@
       <h5 class="author"><%= @book.author %></h5>
       <h5><%= @book.price %></h5>
       <h6><%= @book.courses %></h6>
+      <button class="contactme btn btn-outline-light my-2 my-sm-0">Contact Seller</button>
    </div>
    <div class="col-6" >
       <img src="<%= @url %>" style="width:80%;">
    </div>
 </div>
+
+<script type="text/javascript">
+$('.contactme').click(function(){
+    <% book = @book %>
+    <% userID = book.userID %>
+    <% user = User.find_by(id: userID) %>
+    <% url = user.url %>
+    window.location.replace("<%= url %>");
+   })  
+</script>
+

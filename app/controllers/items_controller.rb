@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :find_item, only: [:show, :update, :edit, :destroy]
 
   def index
     @items = Item.all
@@ -17,22 +18,39 @@ class ItemsController < ApplicationController
     url = upload(key, path)
     @item.sold = false
     @item.image = url
+    @item.userID = @current_user.id
     @item.save!
     redirect_to "/items/#{@item.id}"
   end
 
   def show
-    @item = Item.find(params[:id])
     @url = @item.image
     @background_pic = "black"
   end
 
   def destroy
-    @item = Item.find(params[:id])
     @item.destroy
   end
 
+  def edit
+    @background_pic = "homepic"
+  end
+
+  def update
+    key = @item.title+@item.id.to_s
+    path = params[:item][:image].path
+    url = upload(key, path)
+    @item.image = url
+    @item.update(item_params)
+    redirect_to @item
+  end
+
   private
+
+  def find_item
+    @item = Item.find(params[:id])
+  end
+
   def item_params
     params.require(:item).permit(:title, :desc, :price)
   end

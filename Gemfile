@@ -2,6 +2,12 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.1'
+
+gem "bcrypt"
+# Use FacebookOauth
+gem "omniauth-facebook"
+# To store API key
+gem "figaro"
 # Amazon aws
 gem 'aws-sdk', '~> 3'
 # Jquery and bootstrap

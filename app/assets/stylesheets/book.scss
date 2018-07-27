@@ -1,3 +1,15 @@
+// style for log in page
+.sellbutton
+{
+   text-align: center;
+   padding: 1%;
+}
+
+.loginbutton
+{
+   cursor:pointer;
+}
+
 .title
 {
    color: darkcyan;
@@ -8,7 +20,7 @@
    color: darkgrey;
 }
 
-.info
+.info .sellbook
 {
    text-align: center;
 }
@@ -16,6 +28,40 @@
 .book
 {
    margin-top: 10%;
+}
+
+.index
+{
+   padding: 2% 10%;
+}
+
+// style for log in page
+.log
+{
+   color:white;
+   margin-top:10%;
+   padding: 20%;
+}
+
+.white
+{
+   color:white;
+   text-align:center;
+   font-family: 'Open Sans', sans-serif;
+   padding: 2%;
+}
+
+// style for dashboard page
+
+.dashboardt
+{
+   text-align:center;
+   color: darkorange;
+}
+
+.dashboard
+{
+   margin-top: 5%;
 }
 
 

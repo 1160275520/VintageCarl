@@ -1,6 +1,6 @@
 <div class="main-agileits">
    <div class="form-w3-agile">
-      <h2>Sell My Book</h2>
+      <h2>Edit Your Book</h2>
       <%= form_for @book do |f| %>
             <input placeholder="Title" type="text" name="book[title]" id="book_title" value="<%= @book.title %>">
             <input placeholder="Author" type="text" name="book[author]" id="book_author" value="<%= @book.author %>">
@@ -8,7 +8,7 @@
             <input placeholder="Price" type="text" name="book[price]" id="book_price" value="<%= @book.price %>">
             <h10> Upload a image </h10>
             <%= f.file_field :image %>
-            <input type="submit" name="commit" value="Submit" data-disable-with="Submit">
+            <input type="submit" name="commit" value="Submit" class="btn btn-primary" data-disable-with="Submit">
         </div>
       <% end %>
    </div>

@@ -1,12 +1,10 @@
-<h3 class="white">All Requests</h3>
-<div class="sellbutton">
-   <a href="/requests/new"><button class="btn btn-outline-light my-2 my-sm-0">Make A Request</button></a>
-</div>
 <div class="row">
   <% @requests.each_with_index do |request, index| %>
     <div class="col-3" align="center">
        <div class="title"><%= request.title %></div>
        <div><%= request.desc %></div>
+       <%= link_to 'Destroy', request, :method => :delete, class: 'btn btn-danger btn-sm' %>
+       <%= link_to "Edit","/requests/#{request.id}/edit", :method => :get, class: "btn btn-warning btn-sm" %>
     </div>
   <% end %>
 </div>
