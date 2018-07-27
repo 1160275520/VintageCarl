@@ -47,7 +47,7 @@ class BooksController < ApplicationController
 
   def search
     if params[:search]
-      #sql query
+      # sql query
       @books = Book.where("title LIKE ? OR author LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%")
       # optional elastic search
       # @books = Book.search(params[:search], misspellings: {edit_distance: 3} )

@@ -54,6 +54,7 @@ class ItemsController < ApplicationController
     else
       @items = Item.all
     end
+    @background_pic = "black"
   end
 
 

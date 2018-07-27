@@ -1,13 +1,27 @@
-// style for log in page
+// style for nav bar
+#searchplace
+{
+   border-bottom: 0;
+   background: white;
+   margin-bottom: 0;
+   padding: 4%;
+}
+
+.option
+{
+   margin: 0 2%;
+}
+
+#navbarDropdown
+{
+   color:white;
+}
+
+// style for book
 .sellbutton
 {
    text-align: center;
    padding: 1%;
-}
-
-.loginbutton
-{
-   cursor:pointer;
 }
 
 .title
@@ -36,6 +50,11 @@
 }
 
 // style for log in page
+.loginbutton
+{
+   cursor:pointer;
+}
+
 .log
 {
    color:white;
@@ -63,5 +82,3 @@
 {
    margin-top: 5%;
 }
-
-

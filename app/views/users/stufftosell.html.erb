@@ -8,8 +8,8 @@
              <div class="book-title"><a class="title" href="/books/<%= book.id %>"><%= book.title %></a></div>
              <div class="book-author"> <%= book.author %></div>
              <div class="book-price"> <%= book.price %></div>
-             <%= link_to 'Destroy', book, :method => :delete, class: 'btn btn-danger btn-sm' %>
-             <%= link_to "Edit","/books/#{book.id}/edit", :method => :get, class: "btn btn-warning btn-sm" %>
+             <%= link_to 'Destroy', book, :method => :delete, class: 'btn btn-outline-danger btn-sm' %>
+             <%= link_to "Edit","/books/#{book.id}/edit", :method => :get, class: "btn btn-outline-success btn-sm" %>
           </div>
         <% end %>
       </div>
@@ -22,8 +22,8 @@
              <img class="item-img" src="<%= item.image %>" width="100%">
              <div class="item-title"><a class="title" href="/items/<%= item.id %>"><%= item.title %></a></div>
              <div class="item-price"> <%= item.price %></div>
-             <%= link_to 'Destroy', item, :method => :delete, class: 'btn btn-danger btn-sm' %>
-             <%= link_to "Edit","/items/#{item.id}/edit", :method => :get, class: "btn btn-warning btn-sm" %>          </div>
+             <%= link_to 'Destroy', item, :method => :delete, class: 'btn btn-outline-danger btn-sm' %>
+             <%= link_to "Edit","/items/#{item.id}/edit", :method => :get, class: "btn btn-outline-success btn-sm" %>          </div>
         <% end %>
       </div>
    </div>
